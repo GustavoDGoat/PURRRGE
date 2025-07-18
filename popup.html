@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purge</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="popup.css">
+    <script src="firebase-config.js"></script>
+    <script src="firebase-app-compat.js"></script>
+    <script src="firebase-auth-compat.js"></script>
+    <script src="popup.js"></script>
+</head>
+
+<body>
+    <div class="container" id="loginContainer">
+        <h1>Purge</h1>
+        <p>Sign in to block websites and stay focused.</p>
+        <button id="emailSignInButton">Sign in with Email</button>
+        <div id="emailForm" style="display: none;">
+            <div class="input-group">
+                <input type="email" id="emailInput" placeholder=" " required>
+                <label for="emailInput">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="passwordInput" placeholder=" " required>
+                <label for="passwordInput">Password</label>
+            </div>
+            <button id="signInButton">Sign In</button>
+            <button id="signUpButton">Sign Up</button>
+        </div>
+        <a href="https://nopaste.net/f6CuLHyChG" class="terms-link">Terms and Conditions</a>
+        <a href="https://nopaste.net/M0n8QiVnkj" class="terms-link">Privacy Policy</a>
+        <div id="status"></div>
+        <div class="spinner" id="spinner"></div>
+    </div>
+
+    <div class="container" id="licenseContainer" style="display: none;">
+        <h1>Purge License</h1>
+        <p>Please enter your license key or purchase one.</p>
+        <div class="input-group">
+            <input type="text" id="licenseInput" placeholder=" " maxlength="23">
+            <label for="licenseInput">License Key</label>
+        </div>
+        <button id="submitLicenseButton">Submit Key</button>
+        <a href="https://flutterwave.com/pay/msginbbqtxin" class="terms-link">Buy License (PRO)</a>
+        <a href="https://flutterwave.com/pay/mdqlpaiiteyl" class="terms-link">Buy License(PREMIUM)</a>
+        <div id="licenseStatus">Key</div>
+    </div>
+
+    <div class="container" id="blockContainer" style="display: none;">
+        <h2>Purge</h2>
+        <p>Block websites to boost productivity.</p>
+        <p id="licenseInfo">License Info</p>
+        <h2>Block a Website</h2>
+        <div class="input-group">
+            <input type="text" id="urlInput" placeholder=" ">
+            <label for="urlInput">Website URL (e.g., example.com)</label>
+        </div>
+        <div class="input-group">
+            <select id="timeFrame">
+                <option value="0" selected>---</option>
+                <option value="86400000">1 Day</option>
+                <option value="604800000">7 Days</option>
+                <option value="1209600000">14 Days</option>
+                <option value="2592000000">30 Days</option>
+                <option value="7776000000">3 Months</option>
+                <option value="15552000000">6 Months</option>
+                <option value="31536000000">1 Year</option>
+            </select>
+            <label for="timeFrame">How Long Do you want</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="categoryInput" placeholder=" ">
+            <label for="categoryInput">Category (e.g., Social Media)</label>
+        </div>
+        <button id="blockButton">Block Site</button>
+        <button id="showBlockedSites">View Blocked Sites</button>
+        <div class="dropdown" id="blockedSitesMenu" style="display: none;">
+            <h2>Blocked Sites</h2>
+            <ul id="blockedSitesList"></ul>
+            <button id="closeBlockedSites">Close</button>
+        </div>
+        <div class="sign-out-section">
+            <button id="signOutButton">Sign Out</button>
+        </div>
+        <div id="status"></div>
+        <div class="spinner" id="spinner"></div>
+    </div>
+</body>
+
+</html>

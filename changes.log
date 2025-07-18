@@ -1,0 +1,29 @@
+Change Log for License Key Fixes
+
+Issue: License keys not working properly to unlock extension features
+
+Analysis:
+1. Current implementation uses simple array comparison for license validation
+2. No proper error handling for malformed keys
+3. Basic validation only checks format but not key integrity
+4. Website blocking limits needed adjustment
+
+Changes Made:
+1. Added enhanced validateLicenseKey function with proper validation and error handling
+2. Improved key format validation using regex pattern
+3. Implemented proper tier-based validation (Basic vs Premium)
+4. Added activation date tracking for license keys
+5. Removed unnecessary console.log statements
+6. Streamlined the license validation process
+7. Added structured validation response with isValid, tier, and error information
+8. Updated website blocking limits:
+   - Basic license: 10 websites maximum
+   - Premium license: 50 websites maximum
+
+Results:
+- License keys now properly differentiate between Basic and Premium tiers
+- Basic keys limited to 10 website blocks
+- Premium keys allow up to 50 website blocks
+- Better error messages for invalid keys
+- Improved tracking of license activation
+- More robust validation system

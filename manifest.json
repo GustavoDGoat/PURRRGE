@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Purge",
+    "version": "1.0",
+    "description": "Block distracting websites to boost productivity.",
+    "permissions": [
+        "storage",
+        "webNavigation",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["quotes.html", "dashboard.html", "dashboard.js", "common.css"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "action": {}
+}
